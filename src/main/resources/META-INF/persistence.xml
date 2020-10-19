@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+
+
+	<persistence-unit name="caderneta" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+		<non-jta-data-source>java:/caderneta-ds</non-jta-data-source>
+		
+		<class>br.edu.ifpb.pweb2.caderneta.model.Aluno</class>
+		<class>br.edu.ifpb.pweb2.caderneta.model.AlunoTurma</class>
+		<class>br.edu.ifpb.pweb2.caderneta.model.Aula</class>
+		<class>br.edu.ifpb.pweb2.caderneta.model.Coordenador</class>
+		<class>br.edu.ifpb.pweb2.caderneta.model.Disciplina</class>
+		<class>br.edu.ifpb.pweb2.caderneta.model.Nota</class>
+		<class>br.edu.ifpb.pweb2.caderneta.model.Professor</class>
+		<class>br.edu.ifpb.pweb2.caderneta.model.Turma</class>
+		<class>br.edu.ifpb.pweb2.caderneta.model.Usuario</class>
+		
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" /> <!-- DB Driver -->
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost/caderneta" /> <!-- BD Mane -->
+            <property name="javax.persistence.jdbc.user" value="postgres" /> <!-- DB User -->
+            <property name="javax.persistence.jdbc.password" value="postgres" /> <!-- DB Password -->
+	    	<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/> <!-- DB Dialect -->
+            <property name="hibernate.hbm2ddl.auto" value="update" /> <!-- create / create-drop / update -->  
+            <property name="hibernate.show_sql" value="true" /> <!-- Show SQL in console -->
+            <property name="hibernate.format_sql" value="true" /> <!-- Show SQL formatted -->
+        </properties>
+	</persistence-unit>
+	
+</persistence>
