@@ -24,7 +24,7 @@ public abstract class GenericDAO<T, PK extends Serializable> implements IGeneric
 	
 	@SuppressWarnings("unchecked")
 	public List<T> findAll() {
-		Query q = entityManager.createNamedQuery("select object(o) from " + entityClass.getSimpleName() + " as o");
+		Query q = entityManager.createQuery("select object(o) from " + entityClass.getSimpleName() + " as o");
 		return q.getResultList();
 	}
 

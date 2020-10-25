@@ -52,4 +52,8 @@ public class ProfessorController implements Serializable {
 		}
 	}
 
+	public Professor findByLogin(String login) {
+		return professorDAO.findByLogin(login);
+	}
+
 }

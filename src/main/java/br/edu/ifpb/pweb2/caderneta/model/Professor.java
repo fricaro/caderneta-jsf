@@ -3,18 +3,22 @@ package br.edu.ifpb.pweb2.caderneta.model;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.inject.Named;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
+@Named
 public class Professor extends Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private String nome;
 	
 	private String email;
+	
+	private String dtype;
 	
 	@OneToMany(mappedBy = "professor")
 	private List<Turma> turmas;
@@ -47,6 +51,16 @@ public class Professor extends Usuario implements Serializable {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	public String getDtype() {
+		return dtype;
+	}
+
+	public void setDtype(String dtype) {
+		this.dtype = dtype;
+	}
+	
+	
 	
 	// TO STRING, HASHCODE, EQUALS
 	

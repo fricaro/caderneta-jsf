@@ -52,4 +52,8 @@ public class AlunoController implements Serializable {
 		}
 	}
 
+	public Aluno findByLogin(String login) {
+		return alunoDAO.findByLogin(login);
+	}
+
 }
