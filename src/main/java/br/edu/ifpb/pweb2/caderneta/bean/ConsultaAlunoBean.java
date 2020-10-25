@@ -39,7 +39,7 @@ public class ConsultaAlunoBean extends GenericCadernetaBean implements Serializa
 		this.turma = turma;
 		this.putFlash("turma", turma);
 		this.alunos = controllerAluno.findByTurma(turma);
-		return "/turmas/turma.xhtml?faces-redirect=true";
+		return "/detalhes/turma.xhtml?faces-redirect=true";
 	}
 
 	public Turma getTurma() {

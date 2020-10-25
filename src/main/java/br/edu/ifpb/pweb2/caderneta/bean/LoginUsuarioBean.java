@@ -52,12 +52,13 @@ private static final long serialVersionUID = 1L;
 		
 		// Limpa objeto do formulário
 //		aluno = new Aluno();
+		
 
 		
-		if (aluno != null) return "home/AlunoHome?faces-redirect=true";
+		if (aluno != null) return "home/aluno?faces-redirect=true";
 		else if (professor != null) {
-			if (professor.getDtype().equals("Coordenador")) return "home/CoordenadorHome?faces-redirect=true";
-			else return "home/ProfessorHome?faces-redirect=true";
+			if (professor.getDtype().equals("Coordenador")) return "home/coordenador?faces-redirect=true";
+			else return "home/professor?faces-redirect=true";
 		}
 		else return "errors/LoginError?faces-redirect=true";
 	}

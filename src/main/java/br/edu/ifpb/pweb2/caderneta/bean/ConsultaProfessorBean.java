@@ -41,7 +41,7 @@ public class ConsultaProfessorBean extends GenericCadernetaBean implements Seria
 	
 	public String editar(Professor professor) {
 		this.putFlash("professor", professor);
-		return "cadastro?faces-redirect=true";
+		return "/cadastro/cadastro-professor.xhtml?faces-redirect=true";
 	}
 	
 	

@@ -61,12 +61,12 @@ public class CadastroAlunoTurmaBean extends GenericCadernetaBean implements Seri
 
 		alunoTurma = new AlunoTurma();
 
-		return "/alunos/matricula.xhtml?faces-redirect=true";
+		return "/cadastro/matricular-aluno.xhtml?faces-redirect=true";
 	}
 	
 	public String editar(AlunoTurma alunoTurma) {
 		this.putFlash("alunoTurma", alunoTurma);
-		return "/alunos/matricula.xhtml?faces-redirect=true";
+		return "/cadastro/matricular-aluno.xhtml?faces-redirect=true";
 	}
 	
 	public List<Turma> getTurmaItems() {

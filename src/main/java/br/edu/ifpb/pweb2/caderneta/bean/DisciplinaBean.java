@@ -56,12 +56,12 @@ public class DisciplinaBean extends GenericCadernetaBean implements Serializable
 
 		disciplina = new Disciplina();
 
-		return "/disciplinas/cadastro.xhtml?faces-redirect=true";
+		return "/cadastro/cadastro-disciplina.xhtml?faces-redirect=true";
 	}
 	
 	public String editar(Disciplina disciplina) {
 		this.putFlash("disciplina", disciplina);
-		return "/disciplinas/cadastro.xhtml?faces-redirect=true";
+		return "/cadastro/cadastro-disciplina.xhtml?faces-redirect=true";
 	}
 	
 	public String excluir(Disciplina disciplina) {
@@ -71,7 +71,7 @@ public class DisciplinaBean extends GenericCadernetaBean implements Serializable
 	
 	public String visualizar(Disciplina disciplina) {
 		this.putFlash("disciplina", disciplina);
-		return "/disciplinas/disciplina.xhtml?faces-redirect=true";
+		return "/detalhes/disciplina.xhtml?faces-redirect=true";
 	}
 	
 	public String adicionarProfessor(Turma turma, Professor professor) {

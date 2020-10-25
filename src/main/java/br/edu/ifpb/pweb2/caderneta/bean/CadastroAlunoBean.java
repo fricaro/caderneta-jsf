@@ -51,7 +51,7 @@ private static final long serialVersionUID = 1L;
 		aluno = new Aluno();
 
 		// Retorna para página de login
-		return "/index?faces-redirect=true";
+		return "/cadastro/cadastro-aluno.xhtml?faces-redirect=true";
 	}
 	
 	public String matricular() {

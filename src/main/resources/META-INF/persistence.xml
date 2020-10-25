@@ -15,7 +15,6 @@
 		<class>br.edu.ifpb.pweb2.caderneta.model.Aula</class>
 		<class>br.edu.ifpb.pweb2.caderneta.model.Coordenador</class>
 		<class>br.edu.ifpb.pweb2.caderneta.model.Disciplina</class>
-		<class>br.edu.ifpb.pweb2.caderneta.model.Nota</class>
 		<class>br.edu.ifpb.pweb2.caderneta.model.Professor</class>
 		<class>br.edu.ifpb.pweb2.caderneta.model.Turma</class>
 		<class>br.edu.ifpb.pweb2.caderneta.model.Usuario</class>

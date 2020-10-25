@@ -49,7 +49,7 @@ public class CoordenadorBean implements Serializable {
 		if (!disciplinaController.findAll().isEmpty()) {
 			this.setDisciplinas(disciplinaController.findAll());
 		}
-		return "/coordenadores/index.xhtml?faces-redirect=true";
+		return "/home/coordenador.xhtml?faces-redirect=true";
 	}
 	
 	public String excluir(Disciplina disciplina) {

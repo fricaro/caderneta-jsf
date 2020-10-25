@@ -57,12 +57,12 @@ public class CadastroTurmaBean extends GenericCadernetaBean implements Serializa
 
 		turma = new Turma();
 
-		return "/turmas/cadastro.xhtml?faces-redirect=true";
+		return "/cadastro/cadastro-turma.xhtml?faces-redirect=true";
 	}
 	
 	public String editar(Turma turma) {
 		this.putFlash("turma", turma);
-		return "/turmas/cadastro.xhtml?faces-redirect=true";
+		return "/cadastro/cadastro-turma.xhtml?faces-redirect=true";
 	}
 	
 	public List<Professor> getProfessorItems() {

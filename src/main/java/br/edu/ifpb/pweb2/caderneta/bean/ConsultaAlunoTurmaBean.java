@@ -40,12 +40,12 @@ public class ConsultaAlunoTurmaBean extends GenericCadernetaBean implements Seri
 		putFlash("turma", turma);
 		this.addInfoMessage("Aluno removido da turma com sucesso!");
 		this.init();
-		return "/turmas/turma.xhtml?faces-redirect=true";
+		return "/detalhes/turma.xhtml?faces-redirect=true";
 	}
 	
 	public String editar(AlunoTurma alunoTurma) {
 		this.putFlash("alunoTurma", alunoTurma);
-		return "cadastro?faces-redirect=true";
+		return "/cadastro/matricular-aluno.xhtml?faces-redirect=true";
 	}
 	
 	

@@ -40,14 +40,14 @@ public class ConsultaTurmaBean extends GenericCadernetaBean implements Serializa
 		this.disciplina = disciplina;
 		this.putFlash("disciplina", disciplina);
 		this.turmas = controllerTurma.findByDisciplina(disciplina);	
-		return "/disciplinas/disciplina.xhtml?faces-redirect=true";
+		return "/detalhes/disciplina.xhtml?faces-redirect=true";
 	}
 	
 	public String excluir(Turma turma) {
 		controllerTurma.excluir(turma);
 		this.putFlash("disciplina", turma.getDisciplina());
 		this.addInfoMessage("Turma excluída com sucesso.");
-		return "/disciplinas/disciplina.xhtml?faces-redirect=true";
+		return "/detalhes/disciplina.xhtml?faces-redirect=true";
 	}
 
 	public List<Turma> getTurmas() {
