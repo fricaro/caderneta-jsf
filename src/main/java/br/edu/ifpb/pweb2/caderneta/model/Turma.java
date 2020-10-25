@@ -70,6 +70,14 @@ public class Turma implements Serializable {
 		this.codigo = codigo;
 	}
 	
+	public List<AlunoTurma> getAlunoTurma() {
+		return alunoTurma;
+	}
+
+	public void setAlunoTurma(List<AlunoTurma> alunoTurma) {
+		this.alunoTurma = alunoTurma;
+	}
+	
 	// TO STRING, HASHCODE, EQUALS
 	
 	@Override

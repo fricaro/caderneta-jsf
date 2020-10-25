@@ -41,19 +41,28 @@ public class Aluno extends Usuario implements Serializable {
 		this.matricula = matricula;
 	}
 	
-	// TO STRING, HASHCODE, EQUALS
-
-	@Override
-	public String toString() {
-		return "Aluno [id=" + this.getId() + ", nome=" + nome + ", matricula=" + matricula + "]";
+	public List<AlunoTurma> getAlunoTurma() {
+		return alunoTurma;
 	}
 
+	public void setAlunoTurma(List<AlunoTurma> alunoTurma) {
+		this.alunoTurma = alunoTurma;
+	}
+	
+	
+	// TO STRING, HASHCODE, EQUALS
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((this.getId() == null) ? 0 : this.getId().hashCode());
 		return result;
+	}
+
+	@Override
+	public String toString() {
+		return "Aluno [nome=" + nome + ", matricula=" + matricula + ", alunoTurma=" + alunoTurma + "]";
 	}
 
 	@Override

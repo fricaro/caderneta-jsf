@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Caderneta</title>
+	<h:outputStylesheet library="css" name="style.css" />
+	<h:outputStylesheet library="css" name="bootstrap.css" />
+	<h:outputStylesheet library="css" name="tailwind.min.css" />
+</h:head> 
+<h:body class="bg-green-500">
+	<div class="container bg-white my-8 fill">
+		<p>Welcome, #{loginUsuarioBean.aluno.nome}!</p>
+		<h:form id="cons-disciplina">
+			<p:dataTable value="#{alunoDashboardBean.disciplinas}" var="disciplina" border="1" cellpadding="5px">
+			
+				<f:facet name="header">Disciplinas</f:facet>
+				
+				<p:column headerText="Nome do Professor" styleClass="columnCenter">
+					<h:outputText value="#{disciplina.nomeProfessor}" id="_nomeProf" />
+				</p:column>
+				
+				<p:column headerText="Nome da disciplina">
+					#{disciplina.nomeDisciplina}
+				</p:column>
+				
+				<p:column headerText="Primeira nota">
+					#{disciplina.nota1}
+				</p:column>
+				
+				<p:column headerText="Segunda nota">
+					#{disciplina.nota2}
+				</p:column>
+				
+				<p:column headerText="Terceira nota">
+					#{disciplina.nota3}
+				</p:column>
+				
+				<p:column headerText="Falta">
+					#{disciplina.faltas}
+				</p:column>
+				
+				
+			</p:dataTable>
+		</h:form>
+	</div>
+</h:body> 
+</html>

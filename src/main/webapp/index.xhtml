@@ -19,36 +19,22 @@
 			<div class="ui-g ui-fluid">
 				<div class="ui-g-3">
 					<p:outputLabel value="Login:" for="login" />
-					<p:inputText value="#{cadAlunoBean.aluno.login}" id="login"
+					<p:inputText value="#{loginUsuarioBean.login}" id="login"
 						required="true" requiredMessage="Login é obrigatório!">
 					</p:inputText>
 				</div>
 				
 				<div class="ui-g-3">
 					<p:outputLabel value="Senha:" for="senha" />
-					<p:password value="#{cadAlunoBean.aluno.senha}" id="senha"
+					<p:password value="#{loginUsuarioBean.senha}" id="senha"
 						required="true" requiredMessage="Senha é obrigatória!">
 					</p:password>
-				</div>
-				
-				<div class="ui-g-3">
-					<p:outputLabel value="Nome:" for="nome" />
-					<p:inputText value="#{cadAlunoBean.aluno.nome}" id="nome"
-						required="true" requiredMessage="Nome é obrigatório!">
-					</p:inputText>
-				</div>
-				
-				<div class="ui-g-3">
-					<p:outputLabel value="Matrícula:" for="matricula" />
-					<p:inputText value="#{cadAlunoBean.aluno.matricula}" id="matricula"
-						required="true" requiredMessage="Matrícula é obrigatória!">
-					</p:inputText>
 				</div>
 			</div>
 			
 			<div class="ui-g ui-fluid">
 				<div class="ui-g-2">
-					<p:commandButton action="#{cadAlunoBean.cadastrar}" value="Cadastrar"
+					<p:commandButton action="#{loginUsuarioBean.logar}" value="Login"
 						ajax="false" />
 				</div>
 			</div>

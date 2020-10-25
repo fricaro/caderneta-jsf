@@ -14,6 +14,8 @@ public class Coordenador extends Professor implements Serializable {
 	@Column(columnDefinition = "boolean default false")
 	private Boolean ativo;
 	
+	private String dtype;
+	
 	public Coordenador() {}
 	
 	// GETTERS AND SETTERS
@@ -26,13 +28,24 @@ public class Coordenador extends Professor implements Serializable {
 		this.ativo = ativo;
 	}
 
-	@Override
-	public String toString() {
-		return "Coordenador [id=" + this.getId() + ", ativo=" + ativo + "]";
+	
+	public String getDtype() {
+		return dtype;
+	}
+
+	public void setDtype(String dtype) {
+		this.dtype = dtype;
 	}
 	
 	// TO STRING, HASHCODE, EQUALS
 	
+	
+	@Override
+	public String toString() {
+		return "Coordenador [ativo=" + ativo + ", dtype=" + dtype + "]";
+	}
+	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

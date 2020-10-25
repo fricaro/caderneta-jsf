@@ -1,6 +1,8 @@
 package br.edu.ifpb.pweb2.caderneta.dao;
 
 import java.util.List;
+import javax.persistence.NoResultException;
+import javax.persistence.Query;
 
 import br.edu.ifpb.pweb2.caderneta.model.Aluno;
 import br.edu.ifpb.pweb2.caderneta.model.Turma;
@@ -15,6 +17,17 @@ public class AlunoDAO extends GenericDAO<Aluno, Integer> {
 						" AS aluno JOIN FETCH aluno.alunoTurma AS at WHERE at.turma.id = :id")
 				.setParameter("id", turma.getId())
 				.getResultList();
+	}
+
+	public Aluno findByLogin(String login) {		
+		try {			
+			return (Aluno) entityManager
+					.createQuery("SELECT object(o) FROM " + entityClass.getSimpleName() + " as o WHERE o.login = :login")
+					.setParameter("login", login)
+					.getSingleResult();
+		} catch (NoResultException e) {
+			return null;
+		}
 	}
 
 }
