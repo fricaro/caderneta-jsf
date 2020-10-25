@@ -8,7 +8,9 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import br.edu.ifpb.pweb2.caderneta.controller.AlunoController;
+import br.edu.ifpb.pweb2.caderneta.controller.TurmaController;
 import br.edu.ifpb.pweb2.caderneta.model.Aluno;
+import br.edu.ifpb.pweb2.caderneta.model.Turma;
 
 @Named(value = "cadAlunoBean")
 @ViewScoped
@@ -19,7 +21,13 @@ private static final long serialVersionUID = 1L;
 	private Aluno aluno;
 	
 	@Inject
-	private AlunoController alunoController;
+	private Turma turma;
+	
+	@Inject
+	private AlunoController controllerAluno;
+	
+	@Inject
+	private TurmaController controllerTurma;
 	
 	@PostConstruct
 	public void init() {
@@ -31,7 +39,7 @@ private static final long serialVersionUID = 1L;
 	public String cadastrar() {		
 		// Usa o dao para inserir o aluno
 		Integer id = aluno.getId();
-		alunoController.saveOrUpdate(aluno);
+		controllerAluno.saveOrUpdate(aluno);
 		
 		this.KeepMessages();
 		if(id == null)
@@ -44,6 +52,11 @@ private static final long serialVersionUID = 1L;
 
 		// Retorna para página de login
 		return "/index?faces-redirect=true";
+	}
+	
+	public String matricular() {
+		
+		return null;
 	}
 	
 	public Aluno getAluno() {

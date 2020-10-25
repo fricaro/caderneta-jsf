@@ -5,8 +5,9 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import br.edu.ifpb.pweb2.caderneta.dao.TurmaDAO;
 import br.edu.ifpb.pweb2.caderneta.dao.Transactional;
+import br.edu.ifpb.pweb2.caderneta.dao.TurmaDAO;
+import br.edu.ifpb.pweb2.caderneta.model.Disciplina;
 import br.edu.ifpb.pweb2.caderneta.model.Turma;
 
 public class TurmaController implements Serializable {
@@ -32,6 +33,10 @@ public class TurmaController implements Serializable {
 	
 	public List<Turma> findAll() {
 		return turmaDAO.findAll();
+	}
+	
+	public List<Turma> findByDisciplina(Disciplina disciplina) {
+		return turmaDAO.findByDisciplina(disciplina);
 	}
 	
 	public Turma find(Integer id) {

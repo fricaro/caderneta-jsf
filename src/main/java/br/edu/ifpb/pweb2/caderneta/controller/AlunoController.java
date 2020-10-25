@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import br.edu.ifpb.pweb2.caderneta.dao.AlunoDAO;
 import br.edu.ifpb.pweb2.caderneta.dao.Transactional;
 import br.edu.ifpb.pweb2.caderneta.model.Aluno;
+import br.edu.ifpb.pweb2.caderneta.model.Turma;
 
 public class AlunoController implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -24,6 +25,10 @@ public class AlunoController implements Serializable {
 	@Transactional
 	public Aluno update(Aluno aluno) {
 		return alunoDAO.update(aluno);
+	}
+	
+	public List<Aluno> findByTurma(Turma turma) {
+		return alunoDAO.findByTurma(turma);
 	}
 	
 	public void refresh(Aluno aluno) {

@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+	<ui:composition>
+	
+		<h:form>  
+		    <p:growl id="messages"/>
+		 
+		    <p:menubar>
+		        <p:submenu label="Disciplinas" icon="fa fa-file">
+		            <p:menuitem value="Adicionar Disciplina" url="/disciplinas/cadastro.xhtml" />
+		            <p:menuitem value="Listar Disciplinas" url="/coordenadores"/>
+		        </p:submenu>
+		        
+		        <p:submenu label="Professores" icon="fa fa-file">
+		            <p:menuitem value="Adicionar Professor" url="/professores/cadastro.xhtml" />
+		            <p:menuitem value="Listar Professores" url="/professores"/>
+		        </p:submenu>
+		 
+		        <p:submenu label="Alunos" icon="fa fa-graduation-cap">
+		            <p:menuitem value="Matricular Aluno" url="/alunos/matricula.xhtml" icon="fa fa-angle-double-left" />
+		        </p:submenu>
+		 
+		        <f:facet name="options">
+		            <p:commandButton type="button" value="Logout" icon="fa fa-sign-out" />
+		        </f:facet>
+		    </p:menubar>
+		</h:form>
+	
+	</ui:composition>
+</html>

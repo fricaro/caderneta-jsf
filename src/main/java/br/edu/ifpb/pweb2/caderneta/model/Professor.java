@@ -7,7 +7,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.inject.Named;
 
+@Named
 @Entity
 public class Professor extends Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
