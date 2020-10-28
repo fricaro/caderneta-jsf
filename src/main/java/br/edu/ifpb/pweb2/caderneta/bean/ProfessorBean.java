@@ -17,8 +17,6 @@ public class ProfessorBean extends GenericCadernetaBean implements Serializable 
 	private static final long serialVersionUID = 1L;
 	
 	// MODELS
-	
-	@Inject @Named("professor")
 	private Professor professor;
 	
 	@Inject

@@ -38,6 +38,10 @@ public class CoordenadorController implements Serializable {
 		return coordenadorDAO.find(id);
 	}
 	
+	public Coordenador findByLogin(String login) {
+		return coordenadorDAO.findByLogin(login);
+	}
+	
 	@Transactional
 	public Coordenador insert(Coordenador coordenador) {
 		return coordenadorDAO.insert(coordenador);

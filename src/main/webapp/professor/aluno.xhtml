@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Caderneta</title>
+	<h:outputStylesheet library="css" name="style.css" />
+	<h:outputStylesheet library="css" name="bootstrap.css" />
+	<h:outputStylesheet library="css" name="tailwind.min.css" />
+</h:head> 
+<h:body class="bg-green-500">
+	<div class="container bg-white my-8 fill">		
+		<p:messages closable="true" />
+			
+		<br /> 
+		
+		<p:panel id="panel" header="Editar aluno">
+		
+		<p:focus context="panel"/>
+		
+		<h:form id="cad-aluno">
+			<div class="ui-g ui-fluid">
+				<div class="ui-g-12 ui-md-12">
+					<div>Aluno:</div> 
+					<div>#{professorDashboardBean.alunoExibido.aluno.nome}</div> 
+				</div>
+				
+				<div class="ui-g-12 ui-md-3">
+					<p:outputLabel value="Nota 1" for="nota1" />
+					<br />
+					<p:inputText 
+						id="nota1" 
+						value="#{professorDashboardBean.alunoExibido.primeiraNota}"
+					/>
+				</div>
+				
+				<div class="ui-g-12 ui-md-3">
+					<p:outputLabel value="Nota 2" for="nota2" />
+					<br />
+					<p:inputText 
+						id="nota2"
+						value="#{professorDashboardBean.alunoExibido.segundaNota}"
+					/>
+				</div>
+				
+				<div class="ui-g-12 ui-md-3">
+					<p:outputLabel value="Nota 3" for="nota3" />
+					<br />
+					<p:inputText 
+						id="nota3" 
+						value="#{professorDashboardBean.alunoExibido.terceiraNota}"
+					/>
+				</div>
+				
+				<div class="ui-g-12 ui-md-3">
+					<p:outputLabel value="Faltas" for="faltas" />
+					<br />
+					<p:inputText 
+						id="faltas"
+						value="#{professorDashboardBean.alunoExibido.faltas}"
+					/>
+				</div>
+				
+				
+				<div class="ui-g-12">
+					<p:commandButton action="#{professorDashboardBean.atualizarNotasAluno}" value="Atualizar notas" ajax="false"/>
+				</div>
+				
+			</div>
+		</h:form>
+	</p:panel>
+		
+	</div>
+</h:body> 
+</html>

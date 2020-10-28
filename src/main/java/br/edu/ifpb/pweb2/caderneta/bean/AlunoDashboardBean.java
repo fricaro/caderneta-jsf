@@ -10,11 +10,7 @@ import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
 import br.edu.ifpb.pweb2.caderneta.DTO.AlunoDashboard;
-import br.edu.ifpb.pweb2.caderneta.controller.DisciplinaController;
-import br.edu.ifpb.pweb2.caderneta.controller.TurmaController;
 import br.edu.ifpb.pweb2.caderneta.model.Aluno;
-import br.edu.ifpb.pweb2.caderneta.model.AlunoTurma;
-import br.edu.ifpb.pweb2.caderneta.model.Disciplina;
 import br.edu.ifpb.pweb2.caderneta.model.Turma;
 
 import javax.inject.Inject;
@@ -24,16 +20,11 @@ import javax.inject.Inject;
 public class AlunoDashboardBean extends GenericCadernetaBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-//	private List<Disciplina> disciplinas;
 	@Inject LoginUsuarioBean usuario;
-	@Inject private DisciplinaController disciplinaController;
 	private List<AlunoDashboard> disciplinas;
 	
 	@PostConstruct
 	public void init() {
-//		if (!disciplinaController.findAll().isEmpty()) {
-//			this.disciplinas = disciplinaController.findAll();
-//		} 
 		if (usuario != null)
 			this.disciplinas = getTurmaByIdAluno();
 	}
@@ -54,14 +45,6 @@ public class AlunoDashboardBean extends GenericCadernetaBean implements Serializ
 		});
 		return dashboard;
 	}
-
-//	public List<Disciplina> getDisciplinas() {
-//		return disciplinas;
-//	}
-//
-//	public void setDisciplinas(List<Disciplina> disciplinas) {
-//		this.disciplinas = disciplinas;
-//	}
 	
 	public LoginUsuarioBean getUsuario() {
 		return usuario;

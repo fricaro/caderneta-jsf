@@ -6,7 +6,6 @@ import javax.inject.Named;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
-@Named
 @Entity
 public class Coordenador extends Professor implements Serializable {
 	private static final long serialVersionUID = 1L;

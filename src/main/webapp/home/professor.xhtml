@@ -12,7 +12,35 @@
 </h:head> 
 <h:body class="bg-green-500">
 	<div class="container bg-white my-8 fill">
-		<h1>ProfessorMenus.xhtml</h1>
+		
+		<p:messages closable="true" />
+			
+		<br />
+		
+		<h:form id="cons-disciplina">
+			<p:dataTable value="#{professorDashboardBean.turmas}" var="turma" border="1" cellpadding="5px">
+			
+				<f:facet name="header">Turmas</f:facet>
+				
+				<p:column headerText="Código" styleClass="columnCenter">
+					<h:outputText value="#{turma.codigo}" id="_codigo" />
+				</p:column>
+				
+				<p:column headerText="Curso">
+					#{turma.nomeCurso}
+				</p:column>
+				
+				<p:column headerText="Nome">
+					#{turma.nomeDisciplina}
+				</p:column>
+				
+				<p:column headerText="Ações">
+					<p:commandButton action="#{professorDashboardBean.visualizarTurma(turma.turma)}" title="Visualizar turma" icon="fa fa-eye" ajax="false"/>
+				</p:column>
+				
+			</p:dataTable>
+		</h:form>
+		
 	</div>
 </h:body> 
 </html>

@@ -10,7 +10,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.inject.Named;
 
-@Named
 @Entity
 public class Professor extends Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -67,7 +66,7 @@ public class Professor extends Usuario implements Serializable {
 	
 	@Override
 	public String toString() {
-		return "Professor [id=" + this.getId() + ", nome=" + nome + ", email=" + email + "]";
+		return "Professor [nome=" + nome + ", email=" + email + ", dtype=" + dtype + ", turmas=" + turmas + "]";
 	}
 
 	@Override

@@ -35,9 +35,6 @@ public class CoordenadorBean implements Serializable {
 	@Inject
 	private TurmaController turmaController;
 	
-//	@Inject
-//	private AlunoTurmaController alunoTurmaController;
-	
 	@PostConstruct
 	public void init() {
 		if (!disciplinaController.findAll().isEmpty()) {
@@ -65,15 +62,6 @@ public class CoordenadorBean implements Serializable {
 		return null;
 	}
 	
-//	public String cadastrarAlunoEmTurma(Integer idAluno, Integer idTurma) {
-//		Aluno aluno = alunoController.find(idAluno);
-//		Turma turma = turmaController.find(idTurma);
-//		AlunoTurma aluno_turma = new AlunoTurma();
-//		aluno_turma.setAluno(aluno);
-//		aluno_turma.setTurma(turma);
-//		alunoTurmaController.saveOrUpdate(aluno_turma);
-//		return null;
-//	}
 
 	public List<Disciplina> getDisciplinas() {
 		return disciplinas;

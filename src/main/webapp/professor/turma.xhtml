@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Caderneta</title>
+	<h:outputStylesheet library="css" name="style.css" />
+	<h:outputStylesheet library="css" name="bootstrap.css" />
+	<h:outputStylesheet library="css" name="tailwind.min.css" />
+</h:head> 
+<h:body class="bg-green-500">
+	<div class="container bg-white my-8 fill">
+		<p:messages closable="true" />
+			
+		<br />
+		
+		<h:form id="cad-disciplina">
+			<div class="ui-g ui-fluid">
+				<div class="ui-g-3">Total aulas registradas: #{professorDashboardBean.totalAulasRegistradas()}</div>
+				<div class="ui-g-3">
+					<p:commandButton action="#{professorDashboardBean.irParaRegistrarAula()}" value="Registrar aula" ajax="false"/>
+				</div>
+				<div class="ui-g-3">Notas abertas: #{professorDashboardBean.turmaExibida.notasEncerradas}</div>
+				<div class="ui-g-3">
+					<p:commandButton action="#{professorDashboardBean.fecharNotas()}" value="Fechar Notas" ajax="false"/>
+				</div>
+			</div>
+		</h:form>
+		<br />
+		
+		<h:form id="cons-turma">
+			<p:dataTable value="#{professorDashboardBean.turmaExibida.alunoTurma}" var="alunoTurma" border="1" cellpadding="5px">
+			
+				<f:facet name="header">Alunos</f:facet>
+				
+				<p:column headerText="Nome" styleClass="columnCenter">
+					<h:outputText value="#{alunoTurma.aluno.nome}" id="_nome" />
+				</p:column>
+				
+				<p:column headerText="Matrícula" styleClass="columnCenter">
+					<h:outputText value="#{alunoTurma.aluno.matricula}" />
+				</p:column>
+				
+				<p:column headerText="Nota 1" styleClass="columnCenter">
+					<h:outputText value="#{alunoTurma.primeiraNota}" />
+				</p:column>
+				
+				<p:column headerText="Nota 2" styleClass="columnCenter">
+					<h:outputText value="#{alunoTurma.segundaNota}" />
+				</p:column>
+				
+				<p:column headerText="Nota 3" styleClass="columnCenter">
+					<h:outputText value="#{alunoTurma.terceiraNota}" />
+				</p:column>
+				
+				<p:column headerText="Status" styleClass="columnCenter">
+					<h:outputText value="#{professorDashboardBean.calcularStatus(alunoTurma)}" />
+				</p:column>
+				
+				<p:column headerText="Faltas" styleClass="columnCenter">
+					<h:outputText value="#{alunoTurma.faltas}" />
+				</p:column>
+				
+				<p:column headerText="Frequencia" styleClass="columnCenter">
+					<h:outputText value="#{professorDashboardBean.calcularFrequenciaEmString(alunoTurma.faltas)}%" />
+				</p:column>
+				
+				
+				<p:column headerText="Ações">
+					<p:commandButton action="#{professorDashboardBean.visualizarAluno(alunoTurma)}" title="Editar aluno" icon="fa fa-edit" ajax="false"/>
+				</p:column>
+				
+			</p:dataTable>
+		</h:form>
+		
+	</div>
+</h:body> 
+</html>

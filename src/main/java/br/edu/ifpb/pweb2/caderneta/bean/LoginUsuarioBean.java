@@ -24,6 +24,7 @@ private static final long serialVersionUID = 1L;
 	@Inject private AlunoController alunoController;
 	@Inject private ProfessorController professorController;
 	private Aluno aluno;
+	private Professor professor;
 	
 	@PostConstruct
 	public void init() {
@@ -34,26 +35,11 @@ private static final long serialVersionUID = 1L;
 	}
 	
 	public String logar() {		
-		// verificar se os dados são de um aluno 
 		this.aluno = alunoController.findByLogin(login);
-		Professor professor = professorController.findByLogin(login);
+		this.professor = professorController.findByLogin(login);
 		
 		out.println(aluno);
 		out.println(professor);
-//		// Usa o dao para inserir o aluno
-//		Integer id = aluno.getId();
-//		alunoController.saveOrUpdate(aluno);
-//		
-//		this.KeepMessages();
-//		if(id == null)
-//			this.addInfoMessage("Aluno cadastrado com sucesso!");
-//		else
-//			this.addInfoMessage("Aluno atualizado com sucesso!");
-		
-		// Limpa objeto do formulário
-//		aluno = new Aluno();
-		
-
 		
 		if (aluno != null) return "home/aluno?faces-redirect=true";
 		else if (professor != null) {
@@ -85,6 +71,14 @@ private static final long serialVersionUID = 1L;
 
 	public void setAluno(Aluno aluno) {
 		this.aluno = aluno;
+	}
+
+	public Professor getProfessor() {
+		return professor;
+	}
+
+	public void setProfessor(Professor professor) {
+		this.professor = professor;
 	}
 	
 	
